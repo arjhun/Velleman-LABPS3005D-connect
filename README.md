@@ -1,5 +1,5 @@
 # Velleman LABPS3005D Library
- A Java library to connect to your Velleman or other Korad style 3005D power supplies.
+ A Java library to connect to your Velleman or other Korad style 3005D power supplies over the serial port.
  
  This project started out as a way for me to learn how to interface with hardware, serial protocols (although this is a real shitty one), and finish creating a Java Library. When using this library, keep in mind that this project is a work in progress.
 
