@@ -28,7 +28,7 @@ You can also include the porject via maven into your own project.
 
 You can find experiments and examples [included in this repository](https://github.com/arjhun/Velleman-LABPS3005D-connect/tree/main/src/main/java/nl/arjenklaverstijn/software/korad/automationExamples "Check out the examples!") .
 
-### Connect to your PSU
+### Connect to your PSU with the `LabPSU3005D.class`
 
 ```java
 // setup and open port
