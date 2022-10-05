@@ -44,7 +44,8 @@ public class LabPSU3005DTest {
    */
   @After
   public void tearDown() throws Exception {
-    // device.setOuputState(0F, 0F);
+    device.setVoltage(0);
+    device.setCurrent(0);
     device.setEnabled(false);
     device.closePort();
   }
