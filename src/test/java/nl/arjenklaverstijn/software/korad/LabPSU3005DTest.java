@@ -21,7 +21,10 @@ import nl.arjenklaverstijn.software.korad.LabPSU3005D.MODE;
 
 public class LabPSU3005DTest {
 
-  private static final float TEST_RESISTOR = 6.8F; // 1KΩ
+  // current test settings
+  private static final float TEST_RESISTOR = 6.8F; // I used a 6.8Ω 5W power resistor from my desk.
+                                                   // You can use any low value resistor if it's
+                                                   // within the right range.
   private static final float TEST_VOLTAGE = 3.3F;
   private static final float TEST_CURRENTLIMIT = .2F;
 
