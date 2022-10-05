@@ -88,7 +88,6 @@ public class LabPSU3005D {
     // Returns the CH1 output current
     String command = "IOUT1?";
     String result = sendRead(command, 5);
-    System.out.println(result);
     return Float.valueOf(new String(result));
 
   }
@@ -262,7 +261,6 @@ public class LabPSU3005D {
           break;
         }
       }
-      System.out.println("closing");
       in.close();
       log("READ " + value + " (" + value.length() + " bytes)");
     } catch (SerialPortTimeoutException e) {
