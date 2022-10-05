@@ -6,23 +6,24 @@ import java.io.UnsupportedEncodingException;
 import com.fazecast.jSerialComm.SerialPort;
 import com.fazecast.jSerialComm.SerialPortTimeoutException;
 
-
-
 public class LabPSU3005D {
 
   private SerialPort serialPort;
   private boolean debug = false;
   private long lastSend;
 
+  /**
+   * This constructor sets up the {@link SerialPort} object for you with the right settings. Opening
+   * and closing is left up to the user.
+   * 
+   * @param port The system port name to connect to.
+   */
   public LabPSU3005D(String port) {
-    for (SerialPort p : SerialPort.getCommPorts()) {
-      if (p.getSystemPortName().equals(port)) {
-        serialPort = p;
-        serialPort.setFlowControl(SerialPort.FLOW_CONTROL_DISABLED);
-        serialPort.setParity(SerialPort.NO_PARITY);
-        serialPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_BLOCKING, 100, 0);
-      }
-    } ;
+    serialPort = SerialPort.getCommPort(port);
+    // Options
+    serialPort.setFlowControl(SerialPort.FLOW_CONTROL_DISABLED);
+    serialPort.setParity(SerialPort.NO_PARITY);
+    serialPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_BLOCKING, 80, 0);
   }
 
   public void setCurrent(float current) {
@@ -265,7 +266,7 @@ public class LabPSU3005D {
       in.close();
       log("READ " + value + " (" + value.length() + " bytes)");
     } catch (SerialPortTimeoutException e) {
-      log("ERROR during read... Getting the ID?");
+      log("ERROR during read... No more data comming in");
     } catch (IOException e) {
 
     }
