@@ -78,7 +78,7 @@ public class LithiumChargeAutomation extends Automation {
 
   @Override
   public void job(LabPSU3005D device) {
-
+    try {
     device.setOVP(true);
     device.setOCP(false);
     device.setVoltage(chargeV);
@@ -86,13 +86,13 @@ public class LithiumChargeAutomation extends Automation {
     device.setEnabled(true);
 
     // Wait a bit, to let the battery voltage settle
-    try {
       Thread.sleep(1000);
+    while (device.getOutputCurrent() > cutOffCurrent) {
+    }
     } catch (InterruptedException e) {
       e.printStackTrace();
-    }
-
-    while (device.getOutputCurrent() > cutOffCurrent) {
+    }finaly{
+      device.closePort();
     }
   }
 }
