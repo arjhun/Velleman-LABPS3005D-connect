@@ -105,7 +105,7 @@ System.out.print("Cut off voltage reached with a current of: " + chargeA + " in 
         + time / 1000 / 60 + " minutes");
 ```
 
-###Run multiple experiments in succession with `AutomationQueue.class`
+### Run multiple experiments in succession with `AutomationQueue.class`
 
 ```java
 LabPSU3005D labPSU = new LabPSU3005D("COM4");
