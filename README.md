@@ -13,7 +13,7 @@
 ## Installation
 
 For now you have to download the source and build/ install yourself using maven.
-You can also include the porject via maven into your own project.
+You can also include the project via maven into your own project.
 
 ```xml
 <dependency>
