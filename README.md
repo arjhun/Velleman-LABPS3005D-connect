@@ -102,7 +102,7 @@ Run it like this:
 
 ```java
 LabPSU3005D device = new LabPSU3005D("COM4");
-Long time = new LithiumChargeAutomation(4.2F, .5f).run(device);
+Long time = new LithiumChargeAutomation(4.2F, .1f).run(device);
 System.out.print("Cut off voltage reached with a current of: " + chargeA + " in "
         + time / 1000 / 60 + " minutes");
 ```
